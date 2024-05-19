@@ -14,7 +14,7 @@ namespace PPAI_CU5.Entidades
         public Bodega(string nombre, int periodoActualizacion, DateTime fechaUltimaActualizacion)
         {
             this.nombre = nombre;
-            this.periodoActualizacion = periodoActualizacion;
+            this.periodoActualizacion = periodoActualizacion; //en meses
             this.fechaUltimaActualizacion = fechaUltimaActualizacion;
         }
         public bool sosActualizable()

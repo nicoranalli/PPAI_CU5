@@ -8,5 +8,15 @@ namespace PPAI_CU5.Entidades
 {
     public class Varietal
     {
+        string descripcion;
+        int porcentajeComposicion;
+         TipoUva tipoUva;
+
+        public Varietal(string descripcion, int porcentajeComposicion, TipoUva tipoUva)
+        {
+            this.descripcion = descripcion;
+            this.porcentajeComposicion = porcentajeComposicion;
+            this.tipoUva = tipoUva;
+        }
     }
 }

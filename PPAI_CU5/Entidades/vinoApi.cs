@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PPAI_CU5.Entidades
 {
@@ -19,5 +22,12 @@ namespace PPAI_CU5.Entidades
         public List<List<string>> varietal;
         public string tipoUva;
 
+
+        public void obtenerActualizacionesVino()
+        {
+            
+        }
     }
+
 }
+

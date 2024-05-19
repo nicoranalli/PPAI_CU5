@@ -1,0 +1,168 @@
+{
+  "vinos": [
+    {
+      "añada": 2019,
+      "imagenEtiqueta": "https://example.com/vino1.jpg",
+      "nombre": "La Linda Malbec",
+      "notaDeCataBodega": "Aromas de frutos rojos y negros con toques de vainilla y chocolate.",
+      "precioARS": 1200,
+      "nombreBodegas": "La linda",
+      "nombreMaridaje": "Carnes rojas",
+      "nombreTipoUva": "Malbec",
+      "varietales": [
+        {
+          "descripcionVarietal": "Malbec",
+          "porcentajeComposicion": 100
+        }
+      ]
+    },
+    {
+      "añada": 2020,
+      "imagenEtiqueta": "https://example.com/vino2.jpg",
+      "nombre": "La Esperanza Cabernet Sauvignon",
+      "notaDeCataBodega": "Notas de cassis, pimiento rojo y un toque de madera.",
+      "precioARS": 1500,
+      "nombreBodegas": "La esperanza",
+      "nombreMaridaje": "Quesos maduros",
+      "nombreTipoUva": "Cabernet Sauvignon",
+      "varietales": [
+        {
+          "descripcionVarietal": "Cabernet Sauvignon",
+          "porcentajeComposicion": 100
+        }
+      ]
+    },
+    {
+      "añada": 2021,
+      "imagenEtiqueta": "https://example.com/vino3.jpg",
+      "nombre": "Cambiando Syrah",
+      "notaDeCataBodega": "Intenso y complejo con notas de moras, pimienta negra y especias.",
+      "precioARS": 1800,
+      "nombreBodegas": "Cambiando",
+      "nombreMaridaje": "Cordero",
+      "nombreTipoUva": "Syrah",
+      "varietales": [
+        {
+          "descripcionVarietal": "Syrah",
+          "porcentajeComposicion": 100
+        }
+      ]
+    },
+    {
+      "añada": 2018,
+      "imagenEtiqueta": "https://example.com/vino4.jpg",
+      "nombre": "La Llegada Chardonnay",
+      "notaDeCataBodega": "Fresco y afrutado con notas de manzana verde y cítricos.",
+      "precioARS": 1100,
+      "nombreBodegas": "La llegada",
+      "nombreMaridaje": "Pescados",
+      "nombreTipoUva": "Chardonnay",
+      "varietales": [
+        {
+          "descripcionVarietal": "Chardonnay",
+          "porcentajeComposicion": 100
+        }
+      ]
+    },
+    {
+      "añada": 2017,
+      "imagenEtiqueta": "https://example.com/vino5.jpg",
+      "nombre": "La Tremenda Merlot",
+      "notaDeCataBodega": "Suave y aterciopelado con notas de ciruela y cacao.",
+      "precioARS": 1600,
+      "nombreBodegas": "La tremenda",
+      "nombreMaridaje": "Pastas",
+      "nombreTipoUva": "Merlot",
+      "varietales": [
+        {
+          "descripcionVarietal": "Merlot",
+          "porcentajeComposicion": 100
+        }
+      ]
+    },
+    {
+      "añada": 2022,
+      "imagenEtiqueta": "https://example.com/vino6.jpg",
+      "nombre": "La Salida Pinot Noir",
+      "notaDeCataBodega": "Elegante y delicado con notas de frambuesa y florales.",
+      "precioARS": 2000,
+      "nombreBodegas": "La salida",
+      "nombreMaridaje": "Aves",
+      "nombreTipoUva": "Pinot Noir",
+      "varietales": [
+        {
+          "descripcionVarietal": "Pinot Noir",
+          "porcentajeComposicion": 100
+        }
+      ]
+    },
+    {
+      "añada": 2019,
+      "imagenEtiqueta": "https://example.com/vino7.jpg",
+      "nombre": "La Linda Torrontés",
+      "notaDeCataBodega": "Aromático y fresco con notas de jazmín y frutas tropicales.",
+      "precioARS": 1300,
+      "nombreBodegas": "La linda",
+      "nombreMaridaje": "Comida asiática",
+      "nombreTipoUva": "Torrontés",
+      "varietales": [
+        {
+          "descripcionVarietal": "Torrontés",
+          "porcentajeComposicion": 100
+        }
+      ]
+    },
+    {
+      "añada": 2020,
+      "imagenEtiqueta": "https://example.com/vino8.jpg",
+      "nombre": "La Esperanza Bonarda",
+      "notaDeCataBodega": "Intenso y frutado con notas de frutos negros y especias.",
+      "precioARS": 1400,
+      "nombreBodegas": "La esperanza",
+      "nombreMaridaje": "Parrilladas",
+      "nombreTipoUva": "Bonarda",
+      "varietales": [
+        {
+          "descripcionVarietal": "Bonarda",
+          "porcentajeComposicion": 100
+        }
+      ]
+    },
+    {
+      "añada": 2021,
+      "imagenEtiqueta": "https://example.com/vino9.jpg",
+      "nombre": "Cambiando Malbec-Cabernet",
+      "notaDeCataBodega": "Complejo con notas de frutas rojas y negras, y un toque de roble.",
+      "precioARS": 2200,
+      "nombreBodegas": "Cambiando",
+      "nombreMaridaje": "Estofados",
+      "nombreTipoUva": "Blend",
+      "varietales": [
+        {
+          "descripcionVarietal": "Malbec",
+          "porcentajeComposicion": 70
+        },
+        {
+          "descripcionVarietal": "Cabernet Sauvignon",
+          "porcentajeComposicion": 30
+        }
+      ]
+    },
+    {
+      "añada": 2018,
+      "imagenEtiqueta": "https://example.com/vino10.jpg",
+      "nombre": "La Llegada Sauvignon Blanc",
+      "notaDeCataBodega": "Fresco y vibrante con notas de limón y hierba recién cortada.",
+      "precioARS": 1000,
+      "nombreBodegas": "La llegada",
+      "nombreMaridaje": "Ensaladas",
+      "nombreTipoUva": "Sauvignon Blanc",
+      "varietales": [
+        {
+          "descripcionVarietal": "Sauvignon Blanc",
+          "porcentajeComposicion": 100
+        }
+      ]
+    }
+  ]
+}

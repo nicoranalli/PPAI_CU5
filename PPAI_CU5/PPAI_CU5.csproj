@@ -141,6 +141,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base De Datos\ApiDatosVino.cs" />
     <Compile Include="Base De Datos\Datos.cs" />
     <Compile Include="Entidades\Bodega.cs" />
     <Compile Include="Entidades\Enofilo.cs" />
@@ -165,7 +166,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventanas\RootObject.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -181,7 +181,7 @@
     <EmbeddedResource Include="Ventanas\PantallaNovedades.resx">
       <DependentUpon>PantallaNovedades.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Base De Datos\DatosAPI.json" />
+    <None Include="ActualizacionesVinos.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

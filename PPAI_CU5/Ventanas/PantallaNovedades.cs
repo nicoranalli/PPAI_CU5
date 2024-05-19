@@ -27,6 +27,9 @@ namespace PPAI_CU5
             InitializeComponent();
             gestorActualizacion = new GestorActualizacion(this);
             baseDeDatos = new Datos(gestorActualizacion);
+            vinoApi vinoApi = new vinoApi();
+            vinoApi.obtenerActualizacionesVino();
+
         }
 
         private void ActualizacionVinos_Load(object sender, EventArgs e)
@@ -79,7 +82,7 @@ namespace PPAI_CU5
 
         private void btnSeleccionBodegas_Click(object sender, EventArgs e)
         {
-            string bodegaSeleccionada;
+            string bodegaSeleccionada = "";
             foreach (DataGridViewRow fila in gridBodegas.SelectedRows)
             {
                 string nombreBodega = fila.Cells[1].ToString();

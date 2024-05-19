@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace PPAI_CU5.Entidades
 {
-    internal class TipoUva
+    public class TipoUva
     {
+        string descripcion;
+        string nombre;
+
+        public TipoUva(string descripcion, string nombre)
+        {
+            this.descripcion = descripcion;
+            this.nombre = nombre;
+        }
     }
 }

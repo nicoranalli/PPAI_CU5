@@ -34,10 +34,7 @@ namespace PPAI_CU5.Gestor
         #region Metodos
 
         #endregion
-        public void opcImportarActualizaciones()
-        {
 
-        }
         public List<Bodega> buscarBodegasActualizables()
         {
             bodegasActualizables = new List<Bodega>();
@@ -60,7 +57,7 @@ namespace PPAI_CU5.Gestor
         {
                 foreach (Bodega bodega in bodegasActualizables) { if (BodegaSeleccionada == bodega.getNombre()) { bodegaSeleccionada = bodega; };
                 }
-            
+       
 ;       }
     }
 

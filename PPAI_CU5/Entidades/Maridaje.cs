@@ -8,5 +8,13 @@ namespace PPAI_CU5.Entidades
 {
     public class Maridaje
     {
+        string descripcion;
+        string nombre;
+
+        public Maridaje(string descripcion, string nombre)
+        {
+            this.descripcion = descripcion;
+            this.nombre = nombre;
+        }
     }
 }
