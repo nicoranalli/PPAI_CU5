@@ -24,8 +24,5 @@ namespace PPAI_CU5.Ventanas
         {
 
         }
-
-oibt
-            gesto.añadir
     }
 }

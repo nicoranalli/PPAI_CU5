@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using PPAI_CU5;
 
 
@@ -17,7 +18,7 @@ namespace PPAI_CU5.Gestor
         #region Constructor
         public GestorActualizacion(PantallaNovedades pantallaNovedades)
         {
-            this.pantallaNovedades = pantallaLlamada;
+            this.pantallaNovedades = pantallaNovedades;
 
 
         }
