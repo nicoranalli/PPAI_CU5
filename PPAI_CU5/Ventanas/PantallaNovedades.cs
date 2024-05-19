@@ -21,52 +21,79 @@ namespace PPAI_CU5
 
         GestorActualizacion gestorActualizacion;
         Datos baseDeDatos;
+        
         public PantallaNovedades()
         {
             InitializeComponent();
-            leerJson();
             gestorActualizacion = new GestorActualizacion(this);
-
             baseDeDatos = new Datos(gestorActualizacion);
         }
 
         private void ActualizacionVinos_Load(object sender, EventArgs e)
         {
+            baseDeDatos.inicializarDatos();
+            configurarGridBodegas();
 
         }
 
-
-        public void leerJson()
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-            // Ruta del archivo JSON
-            string filePath = "C:\\Program Files\\DatosAPI.json";
+            gestorActualizacion.importarActualizaciones();
+            btnActualizar.Hide();
+            gridBodegas.Show();
+            btnSeleccionBodegas.Show();
+            btnSeleccionBodegas.Enabled = false;
+        }
 
-            // Leer el archivo JSON
-            string jsonContent = File.ReadAllText(filePath);
+        public void solicitarSeleccionBodegas(List<Bodega> bodegasActualizables)
+        {
+            
+            for (int i = 0; i < bodegasActualizables.Count; i++) { gridBodegas.Rows.Add(i +1, bodegasActualizables[i].getNombre()); }
+        }
 
-            // Deserializar el JSON en un objeto de tipo Person
-            List<vinoApi> vinos = JsonConvert.DeserializeObject<List<vinoApi>>(jsonContent);
 
-            // Mostrar los datos en la consola o usarlos en tu aplicación
-   
-            foreach (var vino in vinos)
+        private void gridBodegas_SelectionChanged(object sender, EventArgs e)
+        {
+            validarSeleccionBodegas();
+        }
+
+        private void configurarGridBodegas()
+        {
+            gridBodegas.Hide();
+            btnSeleccionBodegas.Hide();
+            gridBodegas.MultiSelect = true;
+        }
+        private void validarSeleccionBodegas()
+        {
+            if (gridBodegas.SelectedRows.Count == 1)
             {
+                btnSeleccionBodegas.Enabled = true;
+            }
+            else
+            {
+                btnSeleccionBodegas.Enabled = false;
 
-                Console.WriteLine($"Nombre: {vino.nombre}");
-                Console.WriteLine($"Añada: {vino.añada}");
-                Console.WriteLine($"Precio: {vino.precioARS} ARS");
-                Console.WriteLine("Maridajes:");
-                foreach (var maridaje in vino.maridaje)
-                {
-                    Console.WriteLine($"- {maridaje[0]}: {maridaje[1]}");
-                }
-                Console.WriteLine("Varietales:");
-                foreach (var varietal in vino.varietal)
-                {
-                    Console.WriteLine($"- {varietal[0]}: {varietal[1]}%");
-                }
             }
         }
 
+
+        private void btnSeleccionBodegas_Click(object sender, EventArgs e)
+        {
+            string bodegaSeleccionada;
+            foreach (DataGridViewRow fila in gridBodegas.SelectedRows)
+            {
+                string nombreBodega = fila.Cells[1].ToString();
+                bodegaSeleccionada = nombreBodega;
+
+
+            }
+            tomarSeleccionBodega(bodegaSeleccionada);
+            
+        }
+
+        private void tomarSeleccionBodega(string bodegaSeleccionada)
+        {
+            gestorActualizacion.tomarSeleccionBodega(bodegaSeleccionada);
+        }
     }
 }
