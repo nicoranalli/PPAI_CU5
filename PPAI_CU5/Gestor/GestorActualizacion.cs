@@ -71,13 +71,19 @@ namespace PPAI_CU5.Gestor
         {
                 try 
                 {
+                        bool bodegaEncontrada = false;
                         foreach (Bodega bodega in bodegasActualizables)
                         {
                             if (BodegaSeleccionada == bodega.getNombre()) 
                             { 
                                 this.bodegaSeleccionada = bodega;
-                                return;
+                                bodegaEncontrada = true;
                             };
+                        }
+                        if (bodegaEncontrada)
+                        {
+                            this.ActualizarBodega();
+                            return;
                         }
                         
                         throw new Exception("Bodega no encontrada");
@@ -97,9 +103,9 @@ namespace PPAI_CU5.Gestor
         public void ActualizarBodega()
         {
             //primero busca los vinos actualizado de la API
-            var res = this.obtenerActualizaciones();
-            //y luego los manda para la bodegam ademas tenems que pasarle la lista de vinos
-            this.bodegaSeleccionada.ActualizarBodega(res,this.vinos);
+            var respuesta = this.obtenerActualizaciones();
+            //y luego los manda para la bodegam ademas tenes que pasarle la lista de vinos
+            this.bodegaSeleccionada.ActualizarBodega(respuesta,this.vinos);
         }
     }
 

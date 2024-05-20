@@ -17,7 +17,7 @@ namespace PPAI_CU5
         [STAThread]
         static void Main()
         {
-
+            /*
             var gestor = new GestorActualizacion();
             var baseDeDatos = new Datos(gestor);
             baseDeDatos.inicializarDatos();
@@ -25,11 +25,11 @@ namespace PPAI_CU5
             gestor.tomarSeleccionBodega("La tremenda");
             gestor.ActualizarBodega();
 
-            /*
+            */
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new PantallaNovedades());
-            */
+            
         }
     }
 }
