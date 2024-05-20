@@ -43,11 +43,47 @@ namespace PPAI_CU5.Entidades
         public int getAñada()
         {
             return this.añada;
-        } 
+        }
 
         public string getNombre()
         {
             return this.nombre;
         }
-    }
+        public string getCataBodega()
+        {
+            return this.notaDeCataBodega;
+        }
+        public string setNotaDeCataBodega(string newNotaCata)
+        {
+            this.notaDeCataBodega = newNotaCata;
+            return this.notaDeCataBodega;
+        }
+        public float getPrecio()
+        {
+            return this.precioARS;
+        }
+        
+        public float setPrecio(float  precio)
+        {
+            this.precioARS = precio;
+            return this.precioARS;
+        }
+        public string getImagen()
+        {
+            return this.imagenEtiqueta;
+        }
+        public string setImagenEtiqueta(string newImagen)
+        {
+            this.imagenEtiqueta = newImagen;
+            return this.imagenEtiqueta;
+        }
+        public Bodega getBodega()
+        {
+            return this.bodega;
+        }
+        public string conocerBodega()
+        {
+            return this.bodega.getNombre();
+        }
+    }   
 }

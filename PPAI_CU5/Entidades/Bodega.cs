@@ -44,6 +44,7 @@ namespace PPAI_CU5.Entidades
             foreach (var item in listVinoActualizar)
             {
                 bool banderaCrear = false;
+
                 //entra al ciclo si tiene el mismo nombre
                 if (this.esDeBodega(item.Value["bodega"].ToString()))
                 {
@@ -51,15 +52,59 @@ namespace PPAI_CU5.Entidades
                     {
                         if (vino.getNombre() == item.Key && vino.getAñada().ToString() == item.Value["año"].ToString())
                         {
-                            Console.WriteLine($"Vino {item.Key} fue encontrado y se tiene que actualizar");
                             banderaCrear = true;
+                            Console.WriteLine($"se actuliza el vino {vino.getNombre()}");
+                            if (item.Value.ContainsKey("precio"))
+                            {
+                                vino.setPrecio((float)Convert.ToDecimal(item.Value["precio"]));
+                                Console.WriteLine($"se actulizo su precio a: {vino.getPrecio()}");
+                            }
+                            if (item.Value.ContainsKey("notaDeCataBodega"))
+                            {
+                                vino.setNotaDeCataBodega(item.Value["notaDeCataBodega"].ToString());
+                                Console.WriteLine($"se nota de cata a: {vino.getCataBodega()}");
+                            }
+                            if (item.Value.ContainsKey("imagen"))
+                            {
+                                vino.setNotaDeCataBodega(item.Value["imagen"].ToString());
+                                Console.WriteLine($"se actualizo imagen a: {vino.getImagen()}");
+                            }
+
                         }
-                        //Console.WriteLine($"Vino {item.Key} {item.Value["año"]} vino {vino.getNombre()} {vino.getAñada()}");
                     }
                     //no se encontro vino
                     if (!banderaCrear)
                     {
-                        Console.WriteLine($"Vino {item.Key} no fue encontrado y se tiene que crear");
+                        //crear marinaje
+                        var maridaje = item.Value["marinaje"] as Dictionary<string, string>;
+                        var comidaMari = maridaje["nombreComida"];
+                        var descripcionMari = maridaje["descripcion"];
+                        var mari = new Maridaje(descripcionMari, comidaMari);
+
+                        //crear varietal
+                        var varietal = item.Value["varietal"] as Dictionary<string, object>;
+                        var descripVar = (string)varietal["descripcionVarietal"];
+                        var porcentajeVari = Convert.ToInt32(varietal["porcentaje"]);
+                        //crear uva antes de crear el varietal
+                        var tipoUva = varietal["tipoUva"] as Dictionary<string, string>;
+                        var descripUva = tipoUva["descripcion"];
+                        var nombreUva = tipoUva["nombre"];
+                        var Uva = new TipoUva(descripUva, nombreUva);
+                        var Varietal = new Varietal(descripVar, porcentajeVari, Uva);
+                        //Creamos vino
+                        var nombreVino = item.Key;
+                        var imagen = item.Value["imagen"];
+                        var notaCata = item.Value["notaDeCataBodega"];
+                        var bodega = this;
+                        var precio = item.Value["precio"];
+                        var añada = item.Value["año"];
+                        //crear lista de varietal
+                        var listVarietal = new List<Varietal>();
+                        var listMarinaje = new List<Maridaje>();
+                        listMarinaje.Add(mari);
+                        listVarietal.Add(Varietal);
+                        var nuevoVino = new Vino((int)añada, (string)imagen, nombreVino, (string)notaCata, (float)precio, this, listVarietal, listMarinaje);
+                        Console.WriteLine($"se creo el vino {nuevoVino.getNombre()} del año {nuevoVino.getAñada()}, y se registro con exito en la bodega {nuevoVino.conocerBodega()}");
                     }
                 }
             }

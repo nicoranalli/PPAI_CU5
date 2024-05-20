@@ -16,5 +16,8 @@ namespace PPAI_CU5.Entidades
             this.descripcion = descripcion;
             this.nombre = nombre;
         }
+        public string Descripcion { get {  return descripcion; } }
+        public string Nombre { get {  return nombre; } }
+        public string toString() { return $"maridaje: {this.nombre} descripcion: {this.descripcion}"; }
     }
 }

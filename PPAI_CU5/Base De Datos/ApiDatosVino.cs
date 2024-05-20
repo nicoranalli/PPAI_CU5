@@ -18,7 +18,7 @@ namespace PPAI_CU5.Base_De_Datos
             //TODO: para actualizar un vino puede que se actualice su precio, su cataBodega
             //este vino se actualiza todos los valores que se puede actualizar
             vinosActualizar["Vino Legendario"] = new Dictionary<string, object> {
-                    {"año",2021 },
+                    {"año",2020 },
                     {"bodega","La linda" },
                     {"precio",1900.8f },
                     {"imagen", "mabec654.png"},
@@ -61,7 +61,7 @@ namespace PPAI_CU5.Base_De_Datos
                         {
                             { "descripcionVarietal" ,"varietal Especializado"}, 
                             //este es un porcentaje que tiene que estar entro 0 y 100, pudiendo ser flotante
-                            {"procentaje",80f },
+                            {"porcentaje",80f },
                             {"tipoUva", new Dictionary<string,string>
                                 { 
                                     {"descripcion","Uva de excelente calidad" },
