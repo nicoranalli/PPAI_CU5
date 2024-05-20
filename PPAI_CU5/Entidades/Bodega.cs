@@ -44,6 +44,7 @@ namespace PPAI_CU5.Entidades
             foreach (var item in listVinoActualizar)
             {
                 bool banderaCrear = false;
+                //entra al ciclo si tiene el mismo nombre
                 if (this.esDeBodega(item.Value["bodega"].ToString()))
                 {
                     foreach(var vino in vinos)
@@ -51,6 +52,7 @@ namespace PPAI_CU5.Entidades
                         if (vino.getNombre() == item.Key && vino.getAñada().ToString() == item.Value["año"].ToString())
                         {
                             Console.WriteLine($"Vino {item.Key} fue encontrado y se tiene que actualizar");
+                            banderaCrear = true;
                         }
                         //Console.WriteLine($"Vino {item.Key} {item.Value["año"]} vino {vino.getNombre()} {vino.getAñada()}");
                     }

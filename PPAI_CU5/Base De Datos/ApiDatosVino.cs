@@ -17,28 +17,28 @@ namespace PPAI_CU5.Base_De_Datos
             //aca inicializo los datos que me hacen falta
             //TODO: para actualizar un vino puede que se actualice su precio, su cataBodega
             //este vino se actualiza todos los valores que se puede actualizar
-            vinosActualizar["Vino Joven"] = new Dictionary<string, object> {
-                    {"año",2020 },
+            vinosActualizar["Vino Legendario"] = new Dictionary<string, object> {
+                    {"año",2021 },
                     {"bodega","La linda" },
                     {"precio",1900.8f },
                     {"imagen", "mabec654.png"},
                     {"notaDeCataBodega","jugo de naranja con frutos rojo muy rico" },
             };
             //este solo actualiza la imagen
-            vinosActualizar["Apotic ORANGE"] = new Dictionary<string, object> {
-                    {"año",2020 },
+            vinosActualizar["Vino Exclusivo"] = new Dictionary<string, object> {
+                    {"año",2022 },
                     {"bodega","La tremenda" },
-                    {"imagen", "mabecOrange653.png"},
+                    {"imagen", "exclusivo.png"},
             };
             //este solo actuliza el precio
-            vinosActualizar["Labere"] = new Dictionary<string, object> {
+            vinosActualizar["Vino Premium"] = new Dictionary<string, object> {
                     {"año",2020 },
                     {"bodega","La tremenda" },
-                    {"precio",103902.8f }
+                    {"precio",1030902.8f }
             };
             //este actualiza precio y nota de cataBodega
-            vinosActualizar["malbec San Juan"] = new Dictionary<string, object> {
-                    {"año",2020 },
+            vinosActualizar["Vino Boutique"] = new Dictionary<string, object> {
+                    {"año",2019 },
                     {"bodega","La tremenda" },
                     {"precio",120120.8f },
                     {"notaDeCataBodega","hecho en san juan muy rico" }
@@ -72,7 +72,7 @@ namespace PPAI_CU5.Base_De_Datos
                     }
                 };
             // Nuevo vino con todos los atributos
-            vinosActualizar["CABERNET SAUVIGNON RESERVA"] = new Dictionary<string, object>
+            vinosActualizar["Maldonado Malbec"] = new Dictionary<string, object>
                 {
                     {"año",2018 },
                     {"precio",2500.5f },
@@ -100,7 +100,7 @@ namespace PPAI_CU5.Base_De_Datos
                 };
 
             // Otro vino con atributos específicos
-            vinosActualizar["Vino Legendario"] = new Dictionary<string, object>
+            vinosActualizar["Sciarra leñas"] = new Dictionary<string, object>
                 {
                     {"año",2021 },
                     {"precio",1800.3f },
