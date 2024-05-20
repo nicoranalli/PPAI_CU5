@@ -82,21 +82,23 @@ namespace PPAI_CU5
 
         private void btnSeleccionBodegas_Click(object sender, EventArgs e)
         {
-            string bodegaSeleccionada = "";
             foreach (DataGridViewRow fila in gridBodegas.SelectedRows)
             {
-                string nombreBodega = fila.Cells[1].ToString();
-                bodegaSeleccionada = nombreBodega;
-
-
+                string nombreBodega = fila.Cells[1].Value.ToString();
+                tomarSeleccionBodega(nombreBodega);
             }
-            tomarSeleccionBodega(bodegaSeleccionada);
+            
             
         }
 
         private void tomarSeleccionBodega(string bodegaSeleccionada)
         {
             gestorActualizacion.tomarSeleccionBodega(bodegaSeleccionada);
+        }
+
+        private void gridBodegas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

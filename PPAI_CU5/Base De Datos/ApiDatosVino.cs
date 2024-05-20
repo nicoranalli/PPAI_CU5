@@ -4,56 +4,134 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PPAI_CU5.Base_De_Datos
 {
     public class ApiDatosVino
     {
-        public void obtenerActualizacionesVinos()
+        public static void buscarActualizacionesVino()
         {
-            List<List<string>> actualizacionVinos = new List<List<string>>();
-
-            actualizacionVinos = [
-                ["2023", "imagen98.jpg", "Vino Innovador", "Notas de cata actualizada", "2400.90", "La esperanza"],
-
-
-
-                ]
-        }
-
+            // Crear un diccionario con claves de tipo string y valores de tipo int
+            Dictionary<string, Dictionary<string, object>> vinosActualizar = new Dictionary<string, Dictionary<string, object>>();
+            //aca inicializo los datos que me hacen falta
+            //TODO: para actualizar un vino puede que se actualice su precio, su cataBodega
+            //este vino se actualiza todos los valores que se puede actualizar
+            vinosActualizar["Apotic RED"] = new Dictionary<string, object> {
+                    {"año",2020 },
+                    {"bodega","La tremenda" },
+                    {"precio",1900.8f },
+                    {"imagen", "mabec654.png"},
+                    {"notaDeCataBodega","jugo de naranja con frutos rojo muy rico" },
+            };
+            //este solo actualiza la imagen
+            vinosActualizar["Apotic ORANGE"] = new Dictionary<string, object> {
+                    {"año",2020 },
+                    {"bodega","La tremenda" },
+                    {"imagen", "mabecOrange653.png"},
+            };
+            //este solo actuliza el precio
+            vinosActualizar["Labere"] = new Dictionary<string, object> {
+                    {"año",2020 },
+                    {"bodega","La tremenda" },
+                    {"precio",103902.8f }
+            };
+            //este actualiza precio y nota de cataBodega
+            vinosActualizar["malbec San Juan"] = new Dictionary<string, object> {
+                    {"año",2020 },
+                    {"bodega","La tremenda" },
+                    {"precio",120120.8f },
+                    {"notaDeCataBodega","hecho en san juan muy rico" }
+            };
+            //este vino se esta creando y por ende se necesita todos los atributos
+            vinosActualizar["MABEC FRUTO ROJOS"] = new Dictionary<string, object>
                 {
-            new Vino(2020, "imagen1.jpg", "Vino de Autor 1", "Notas de cata frescas y frutales", 1500.50f, bodega1, listaVarietales1, listaMaridajes1),
-            new Vino(2019, "imagen2.jpg", "Vino Reserva", "Notas de cata intensas y complejas", 2000.75f, bodega2, listaVarietales2, listaMaridajes2),
-            new Vino(2021, "imagen3.jpg", "Vino Joven", "Notas de cata ligeras y frescas", 1200.00f, bodega3, listaVarietales3, listaMaridajes3),
-            new Vino(2018, "imagen4.jpg", "Vino Gran Reserva", "Notas de cata robustas y especiadas", 2500.25f, bodega4, listaVarietales4, listaMaridajes4),
-            new Vino(2022, "imagen5.jpg", "Vino Exclusivo", "Notas de cata suaves y delicadas", 3000.60f, bodega5, listaVarietales5, listaMaridajes5),
-            new Vino(2017, "imagen6.jpg", "Vino Clásico", "Notas de cata tradicionales", 1800.40f, bodega1, listaVarietales1, listaMaridajes2),
-            new Vino(2023, "imagen7.jpg", "Vino Innovador", "Notas de cata creativas", 2200.90f, bodega2, listaVarietales2, listaMaridajes3),
-            new Vino(2020, "imagen8.jpg", "Vino Premium", "Notas de cata exclusivas", 2750.35f, bodega3, listaVarietales3, listaMaridajes4),
-            new Vino(2021, "imagen9.jpg", "Vino de la Casa", "Notas de cata caseras", 1600.00f, bodega6, listaVarietales4, listaMaridajes5),
-            new Vino(2019, "imagen10.jpg", "Vino Boutique", "Notas de cata artesanales", 2300.10f, bodega6, listaVarietales5, listaMaridajes1),
-            new Vino(2018, "imagen11.jpg", "Vino Especial", "Notas de cata especiales", 2100.70f, bodega1, listaVarietales1, listaMaridajes2),
-            new Vino(2022, "imagen12.jpg", "Vino Familiar", "Notas de cata familiares", 1450.55f, bodega6, listaVarietales2, listaMaridajes3),
-            new Vino(2017, "imagen13.jpg", "Vino Tradicional", "Notas de cata tradicionales", 1950.85f, bodega3, listaVarietales3, listaMaridajes4),
-            new Vino(2020, "imagen14.jpg", "Vino Auténtico", "Notas de cata auténticas", 1700.25f, bodega4, listaVarietales4, listaMaridajes5),
-            new Vino(2021, "imagen15.jpg", "Vino Legendario", "Notas de cata legendarias", 2900.95f, bodega5, listaVarietales5, listaMaridajes1)
-        };
+                    {"año",2000 },
+                    {"precio",2000.4f },
+                    {"bodega","La tremenda" },
+                    {"imagen", "mabec43.png"},
+                    {"notaDeCataBodega","vino con gustos especiales fruto rojo" },
+                    {"marinaje", new Dictionary<string,string>
+                        {
+                            {"nombreComida","Queso" },
+                            {"descripcion","Ideal para quesos" }
+                        }
+                    },
+                    {"varietal", new Dictionary<string,object>
+                        {
+                            { "descripcionVarietal" ,"varietal Especializado"}, 
+                            //este es un porcentaje que tiene que estar entro 0 y 100, pudiendo ser flotante
+                            {"procentaje",80f },
+                            {"tipoUva", new Dictionary<string,string>
+                                { 
+                                    {"descripcion","Uva de excelente calidad" },
+                                    {"nombre","Malbec" }
+                                }
+                            }
+                        }
+                    }
+                };
+            // Nuevo vino con todos los atributos
+            vinosActualizar["CABERNET SAUVIGNON RESERVA"] = new Dictionary<string, object>
+                {
+                    {"año",2018 },
+                    {"precio",2500.5f },
+                    {"bodega","La tremenda" },
+                    {"imagen", "cabernet_reserva.png"},
+                    {"notaDeCataBodega","aromas a frutas negras con un toque de vainilla" },
+                    {"marinaje", new Dictionary<string,string>
+                        {
+                            {"nombreComida","Carne asada" },
+                            {"descripcion","Perfecto para acompañar carnes asadas" }
+                        }
+                    },
+                    {"varietal", new Dictionary<string,object>
+                        {
+                            {"descripcionVarietal" ,"varietal Premium"},
+                            {"porcentaje",85.5f },
+                            {"tipoUva", new Dictionary<string,string>
+                                {
+                                    {"descripcion","Uva de alta calidad" },
+                                    {"nombre","Cabernet Sauvignon" }
+                                }
+                            }
+                        }
+                    }
+                };
 
+            // Otro vino con atributos específicos
+            vinosActualizar["CHARDONNAY BLANCO"] = new Dictionary<string, object>
+                {
+                    {"año",2019 },
+                    {"precio",1800.3f },
+                    {"bodega","La tremenda" },
+                    {"imagen", "chardonnay_blanco.png"},
+                    {"notaDeCataBodega","fresco con notas cítricas" },
+                    {"marinaje", new Dictionary<string,string>
+                        {
+                            {"nombreComida","Pescado" },
+                            {"descripcion","Excelente para acompañar pescados y mariscos" }
+                        }
+                    },
+                    {"varietal", new Dictionary<string,object>
+                        {
+                            {"descripcionVarietal" ,"varietal Refrescante"},
+                            {"porcentaje",75f },
+                            {"tipoUva", new Dictionary<string,string>
+                                {
+                                    {"descripcion","Uva de buena calidad" },
+                                    {"nombre","Chardonnay" }
+                                }
+                            }
+                        }
+                    }
+                };
+            foreach (var vino in vinosActualizar)
+            {
+                Console.WriteLine($"nombre vino {vino.Key}, año {vino.Value["año"]}, bodega {vino.Value["bodega"]}");
+            }
 
-
-    List<Vino> vinos = new List<Vino>
-        {
-            new Vino(2020, "imagen1.jpg", "Vino de Autor 1", "Notas de cata frescas y frutales", 1500.50f, bodega1, listaVarietales1, listaMaridajes1),
-            new Vino(2019, "imagen2.jpg", "Vino Reserva", "Notas de cata intensas y complejas", 2000.75f, bodega2, listaVarietales2, listaMaridajes2),
-            new Vino(2021, "imagen3.jpg", "Vino Joven", "Notas de cata ligeras y frescas", 1200.00f, bodega3, listaVarietales3, listaMaridajes3),
-            new Vino(2018, "imagen4.jpg", "Vino Gran Reserva", "Notas de cata robustas y especiadas", 2500.25f, bodega4, listaVarietales4, listaMaridajes4),
-            new Vino(2022, "imagen5.jpg", "Vino Exclusivo", "Notas de cata suaves y delicadas", 3000.60f, bodega5, listaVarietales5, listaMaridajes5),
-            new Vino(2017, "imagen6.jpg", "Vino Clásico", "Notas de cata tradicionales", 1800.40f, bodega1, listaVarietales1, listaMaridajes2),
-            new Vino(2023, "imagen7.jpg", "Vino Innovador", "Notas de cata creativas", 2200.90f, bodega2, listaVarietales2, listaMaridajes3),
-            new Vino(2020, "imagen8.jpg", "Vino Premium", "Notas de cata exclusivas", 2750.35f, bodega3, listaVarietales3, listaMaridajes4),
-            new Vino(2021, "imagen9.jpg", "Vino de la Casa", "Notas de cata caseras", 1600.00f, bodega4, listaVarietales4, listaMaridajes5),
-            new Vino(2019, "imagen10.jpg", "Vino Boutique", "Notas de cata artesanales", 2300.10f, bodega5, listaVarietales5, listaMaridajes1),
-            new Vino(2018, "imagen11.jpg", "Vino Especial", "Notas de cata especiales", 2100.70f, bodega1, listaVarietales1, listaMaridajes2),
+        }
 
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PPAI_CU5.Base_De_Datos;
+using PPAI_CU5.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +16,12 @@ namespace PPAI_CU5
         [STAThread]
         static void Main()
         {
+
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new PantallaNovedades());
+            
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -18,7 +19,7 @@ namespace PPAI_CU5.Gestor
         Bodega bodegaSeleccionada;
         List<Bodega> bodegasActualizables;
         #endregion
-
+        
         #region Constructor
         public GestorActualizacion(PantallaNovedades pantallaNovedades)
         {
@@ -55,10 +56,28 @@ namespace PPAI_CU5.Gestor
 
         public void tomarSeleccionBodega(string BodegaSeleccionada)
         {
-                foreach (Bodega bodega in bodegasActualizables) { if (BodegaSeleccionada == bodega.getNombre()) { bodegaSeleccionada = bodega; };
+                try 
+                {
+                        foreach (Bodega bodega in bodegasActualizables)
+                        {
+                            if (BodegaSeleccionada == bodega.getNombre()) 
+                            { 
+                                this.bodegaSeleccionada = bodega;
+                                Console.WriteLine("me quede en la seleccion de bodega",this.bodegaSeleccionada.getNombre());
+                                return;
+                            };
+                        }
+                        
+                        throw new Exception("Bodega no encontrada");
+           
+            }
+                catch (Exception ex)
+                {
+                    // Aquí puedes manejar la excepción, por ejemplo, imprimir el mensaje de error.
+                    Console.WriteLine(ex.Message);
                 }
-       
 ;       }
+
     }
 
 
