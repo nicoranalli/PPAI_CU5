@@ -39,7 +39,7 @@ namespace PPAI_CU5.Base_De_Datos
             //este actualiza precio y nota de cataBodega
             vinosActualizar["malbec San Juan"] = new Dictionary<string, object> {
                     {"año",2020 },
-                    {"bodega","La tremenda" },
+                    {"bodega","La tremenda"  },
                     {"precio",120120.8f },
                     {"notaDeCataBodega","hecho en san juan muy rico" }
             };
