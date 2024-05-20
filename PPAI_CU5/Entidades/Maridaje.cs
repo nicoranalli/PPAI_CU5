@@ -9,7 +9,7 @@ namespace PPAI_CU5.Entidades
     public class Maridaje
     {
         string descripcion;
-        string nombre;
+        public string nombre;
 
         public Maridaje(string descripcion, string nombre)
         {

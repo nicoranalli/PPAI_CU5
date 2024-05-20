@@ -10,13 +10,17 @@ namespace PPAI_CU5.Entidades
     {
         string descripcion;
         int porcentajeComposicion;
-         TipoUva tipoUva;
+        TipoUva tipoUva;
 
         public Varietal(string descripcion, int porcentajeComposicion, TipoUva tipoUva)
         {
             this.descripcion = descripcion;
             this.porcentajeComposicion = porcentajeComposicion;
             this.tipoUva = tipoUva;
+        }
+        public override string ToString()
+        {
+            return $"Descripcion: {descripcion}\nPorcentaje composicion: {porcentajeComposicion}\nTipo Uva: {tipoUva.ToString()}";
         }
     }
 }

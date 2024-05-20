@@ -16,5 +16,9 @@ namespace PPAI_CU5.Entidades
             this.descripcion = descripcion;
             this.nombre = nombre;
         }
+        public override string ToString()
+        {
+            return $"Descripcion uva: {descripcion}\nNombre Uva: {nombre}";
+        }
     }
 }

@@ -1,0 +1,53 @@
+[
+    {
+        "nombre": "Vino Reserva",
+        "precioARS": 200,
+        "aniada": 2019,
+        "imagenEtiqueta": "imagen16.jpg",
+        "notaDeCataBodega": "Increible sabor dijo Sciarra"
+    },
+    {
+        "nombre": "Vino Joven",
+        "precioARS": 200,
+        "aniada": 2021,
+        "imagenEtiqueta": "imagen16.jpg",
+        "notaDeCataBodega": "Nueva cata de vino"
+    },
+  {
+    "nombre": "Vino Gran Reserva",
+    "precioARS": 400,
+    "aniada": 2018,
+    "imagenEtiqueta": "imagen16.jpg",
+    "notaDeCataBodega": "Nueva cata de vino"
+  },
+  {
+    "nombre": "Vino Nuevo",
+    "precioARS": 69,
+    "aniada": 2003,
+    "imagenEtiqueta": "imagen16.jpg",
+    "notaDeCataBodega": "Nueva cata de vino",
+    "maridajes": [
+      {
+        "descripcion": "Ideal para Quesos",
+        "nombre": "Quesos"
+      },
+      {
+        "descripcion": "Acompaña bien pescados",
+        "nombre": "Pescados"
+      }
+    ],
+    "varietal": [
+      {
+        "descripcion": "Varietal frutal",
+        "porcentajeComposicion": 70,
+        "tipoUva": [
+          {
+            "descripcion": "Uva de excelente calidad",
+            "nombre": "Malbec"
+          }
+        ]
+      }
+    ]
+  }
+
+]

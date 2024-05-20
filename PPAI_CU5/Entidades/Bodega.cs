@@ -34,5 +34,15 @@ namespace PPAI_CU5.Entidades
         {
             return this.nombre;
         }
+
+        internal bool existeVino(Vino vinoAComprobar, List <Vino> listaVinos)
+        {
+            return (vinoAComprobar.bodega == this);
+        }
+        public override string ToString()
+        {
+            return $"Nombre Bodega: {nombre}\n";
+        }
+
     }
 }

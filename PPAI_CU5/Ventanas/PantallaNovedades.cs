@@ -18,25 +18,22 @@ namespace PPAI_CU5
     public partial class PantallaNovedades : Form
     {
 
-
         GestorActualizacion gestorActualizacion;
         Datos baseDeDatos;
+        ApiDatosVino configAPI;
         
         public PantallaNovedades()
         {
             InitializeComponent();
-            gestorActualizacion = new GestorActualizacion(this);
+            configAPI = new ApiDatosVino();
+            gestorActualizacion = new GestorActualizacion(this, configAPI);
             baseDeDatos = new Datos(gestorActualizacion);
-            vinoApi vinoApi = new vinoApi();
-            vinoApi.obtenerActualizacionesVino();
-
         }
 
         private void ActualizacionVinos_Load(object sender, EventArgs e)
         {
             baseDeDatos.inicializarDatos();
             configurarGridBodegas();
-
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
