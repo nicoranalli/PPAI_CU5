@@ -10,16 +10,16 @@ namespace PPAI_CU5.Base_De_Datos
 {
     public class ApiDatosVino
     {
-        public static void buscarActualizacionesVino()
+        public static Dictionary<string, Dictionary<string, object>> buscarActualizacionesVino()
         {
             // Crear un diccionario con claves de tipo string y valores de tipo int
             Dictionary<string, Dictionary<string, object>> vinosActualizar = new Dictionary<string, Dictionary<string, object>>();
             //aca inicializo los datos que me hacen falta
             //TODO: para actualizar un vino puede que se actualice su precio, su cataBodega
             //este vino se actualiza todos los valores que se puede actualizar
-            vinosActualizar["Apotic RED"] = new Dictionary<string, object> {
+            vinosActualizar["Vino Joven"] = new Dictionary<string, object> {
                     {"año",2020 },
-                    {"bodega","La tremenda" },
+                    {"bodega","La linda" },
                     {"precio",1900.8f },
                     {"imagen", "mabec654.png"},
                     {"notaDeCataBodega","jugo de naranja con frutos rojo muy rico" },
@@ -100,9 +100,9 @@ namespace PPAI_CU5.Base_De_Datos
                 };
 
             // Otro vino con atributos específicos
-            vinosActualizar["CHARDONNAY BLANCO"] = new Dictionary<string, object>
+            vinosActualizar["Vino Legendario"] = new Dictionary<string, object>
                 {
-                    {"año",2019 },
+                    {"año",2021 },
                     {"precio",1800.3f },
                     {"bodega","La tremenda" },
                     {"imagen", "chardonnay_blanco.png"},
@@ -126,11 +126,8 @@ namespace PPAI_CU5.Base_De_Datos
                         }
                     }
                 };
-            foreach (var vino in vinosActualizar)
-            {
-                Console.WriteLine($"nombre vino {vino.Key}, año {vino.Value["año"]}, bodega {vino.Value["bodega"]}");
-            }
 
+            return vinosActualizar;
         }
 
     }

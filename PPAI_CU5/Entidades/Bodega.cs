@@ -34,5 +34,42 @@ namespace PPAI_CU5.Entidades
         {
             return this.nombre;
         }
+
+
+
+        public void ActualizarBodega(Dictionary<string, Dictionary<string, object>> listVinoActualizar, 
+            List<Vino> vinos
+            )
+        {
+            foreach (var item in listVinoActualizar)
+            {
+                bool banderaCrear = false;
+                if (this.esDeBodega(item.Value["bodega"].ToString()))
+                {
+                    foreach(var vino in vinos)
+                    {
+                        if (vino.getNombre() == item.Key && vino.getAñada().ToString() == item.Value["año"].ToString())
+                        {
+                            Console.WriteLine($"Vino {item.Key} fue encontrado y se tiene que actualizar");
+                        }
+                        //Console.WriteLine($"Vino {item.Key} {item.Value["año"]} vino {vino.getNombre()} {vino.getAñada()}");
+                    }
+                    //no se encontro vino
+                    if (!banderaCrear)
+                    {
+                        Console.WriteLine($"Vino {item.Key} no fue encontrado y se tiene que crear");
+                    }
+                }
+            }
+        }
+        public bool esDeBodega(string NombreBodega)
+        {
+            if (NombreBodega == this.nombre)
+            {
+                return true;
+            }
+            return false;
+        }
+        
     }
 }

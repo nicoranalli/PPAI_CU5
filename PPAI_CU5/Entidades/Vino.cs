@@ -14,11 +14,11 @@ namespace PPAI_CU5.Entidades
         string notaDeCataBodega;
         float precioARS;
         Bodega bodega;
-        List <Maridaje> maridajes;
-        List <Varietal> varietales;
-        
+        List<Maridaje> maridajes;
+        List<Varietal> varietales;
 
-        public Vino(int añada, string imagenEtiqueta, string nombre, string notaDeCataBodega, float precioARS, Bodega bodega, List <Varietal> varietales, List <Maridaje> maridajes)
+
+        public Vino(int añada, string imagenEtiqueta, string nombre, string notaDeCataBodega, float precioARS, Bodega bodega, List<Varietal> varietales, List<Maridaje> maridajes)
         {
             this.añada = añada;
             this.imagenEtiqueta = imagenEtiqueta;
@@ -40,8 +40,14 @@ namespace PPAI_CU5.Entidades
             this.varietales = varietales;
         }
 
+        public int getAñada()
+        {
+            return this.añada;
+        } 
 
-
-
+        public string getNombre()
+        {
+            return this.nombre;
+        }
     }
 }

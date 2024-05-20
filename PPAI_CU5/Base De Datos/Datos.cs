@@ -79,7 +79,7 @@ namespace PPAI_CU5.Base_De_Datos
         {
             new Vino(2020, "imagen1.jpg", "Vino de Autor 1", "Notas de cata frescas y frutales", 1500.50f, bodega1, listaVarietales1, listaMaridajes1),
             new Vino(2019, "imagen2.jpg", "Vino Reserva", "Notas de cata intensas y complejas", 2000.75f, bodega2, listaVarietales2, listaMaridajes2),
-            new Vino(2021, "imagen3.jpg", "Vino Joven", "Notas de cata ligeras y frescas", 1200.00f, bodega3, listaVarietales3, listaMaridajes3),
+            new Vino(2020, "imagen3.jpg", "Vino Joven", "Notas de cata ligeras y frescas", 1200.00f, bodega3, listaVarietales3, listaMaridajes3),
             new Vino(2018, "imagen4.jpg", "Vino Gran Reserva", "Notas de cata robustas y especiadas", 2500.25f, bodega4, listaVarietales4, listaMaridajes4),
             new Vino(2022, "imagen5.jpg", "Vino Exclusivo", "Notas de cata suaves y delicadas", 3000.60f, bodega5, listaVarietales5, listaMaridajes5),
             new Vino(2017, "imagen6.jpg", "Vino Clásico", "Notas de cata tradicionales", 1800.40f, bodega1, listaVarietales1, listaMaridajes2),
@@ -94,6 +94,7 @@ namespace PPAI_CU5.Base_De_Datos
             new Vino(2021, "imagen15.jpg", "Vino Legendario", "Notas de cata legendarias", 2900.95f, bodega5, listaVarietales5, listaMaridajes1)
         };
 
+            gestorActualizacion.obtenerVinos(vinos);
         }
     }
 }
