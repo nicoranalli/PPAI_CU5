@@ -93,8 +93,22 @@ namespace PPAI_CU5.Base_De_Datos
             new Vino(2020, "imagen14.jpg", "Vino Auténtico", "Notas de cata auténticas", 1700.25f, bodega4, listaVarietales4, listaMaridajes5),
             new Vino(2021, "imagen15.jpg", "Vino Legendario", "Notas de cata legendarias", 2900.95f, bodega5, listaVarietales5, listaMaridajes1)
         };
+            var Enofilo1 = new Enofilo( "Libongiorno",  "Agustin",  "imagen1");
+            var Enofilo2 = new Enofilo( "Sciarra",  "Matias",  "imagen2");
+            var Enofilo3 = new Enofilo( "Maldonado",  "Mateo",  "imagen3");
+            var Seguido1 = new Siguiendo(bodega1);
+            var seguido2 = new Siguiendo(bodega2);
+            var seguido3 = new Siguiendo(bodega3);
+            Enofilo1.addSiguiendo(seguido3);
+            Enofilo2.addSiguiendo(seguido3);
+            Enofilo3.addSiguiendo(seguido2 );
+            Enofilo1.addSiguiendo(Seguido1);
+            Enofilo3.addSiguiendo(Seguido1);
+            List<Enofilo> listaEnofilos = new List<Enofilo> {
+                Enofilo1,Enofilo2,Enofilo3
+            };
             gestorActualizacion.obtenerVinos(vinos);
-
+            gestorActualizacion.buscarEnofilos(listaEnofilos);
         }
     }
 }

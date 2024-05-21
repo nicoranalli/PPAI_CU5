@@ -14,7 +14,9 @@ namespace PPAI_CU5.Base_De_Datos
     {
         public List<Vino> obtenerActualizacionesVinos()
         {
-            string jsonText = File.ReadAllText("C:\\Users\\Pupi\\Desktop\\3af\\DSI\\PPAI\\PPAI\\PPAI_CU5\\vinosAModificar.json");
+            //leemos el json
+            string jsonText = File.ReadAllText("C:\\Users\\matus\\Desktop\\work\\PPAI_CU5\\PPAI_CU5\\vinosAModificar.json");
+            //convierte el string del json en una lista de vinos
             List <Vino> vinosAModificarOCrear = JsonConvert.DeserializeObject<List<Vino>>(jsonText);
             return vinosAModificarOCrear;
         }

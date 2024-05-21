@@ -22,6 +22,7 @@ namespace PPAI_CU5.Gestor
         ApiDatosVino configAPI;
         List<Vino> vinosAActualizarOCrear;
         List<Vino> vinosDeTodasLasBodegas;
+        List<Enofilo> listaSuscriptores;
         #endregion
 
         #region Constructor
@@ -77,7 +78,7 @@ namespace PPAI_CU5.Gestor
             obtenerActualizaciones(); // Va a la API y guarda en un atributo los vinos a actualizar
             this.actualizarVinosBodega();
             this.pantallaNovedades.mostrarActualizaciones(vinosAActualizarOCrear);
-            ; 
+            this.buscarSuscriptores(); 
         }
         public void obtenerActualizaciones()
         {
@@ -120,6 +121,21 @@ namespace PPAI_CU5.Gestor
                 vinosEnString += vino.ToString();
             }
             return vinosEnString;
+        }
+        public void buscarEnofilos(List <Enofilo> listaEnofilo)
+        {
+            this.listaSuscriptores = listaEnofilo;
+        }
+        public void buscarSuscriptores()
+        {
+            foreach(var suscriptor in this.listaSuscriptores)
+            {
+                if (suscriptor.sigueaBodega(this.bodegaSeleccionada))
+                {
+                    var nombre = suscriptor.getNombreUsuario();
+                    Console.WriteLine($"se notifico a {nombre}");
+                }
+            }
         }
         #endregion
 
