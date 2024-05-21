@@ -2,6 +2,7 @@
 using PPAI_CU5.Base_De_Datos;
 using PPAI_CU5.Entidades;
 using PPAI_CU5.Gestor;
+using PPAI_CU5.Ventanas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,12 +22,13 @@ namespace PPAI_CU5
 
         GestorActualizacion gestorActualizacion;
         Datos baseDeDatos;
-        
+        ResultadoListadoActualizaciones ventanaActualizaciones;
         public PantallaNovedades()
         {
             InitializeComponent();
             gestorActualizacion = new GestorActualizacion(this);
             baseDeDatos = new Datos(gestorActualizacion);
+            ventanaActualizaciones = new ResultadoListadoActualizaciones();
             vinoApi vinoApi = new vinoApi();
             vinoApi.obtenerActualizacionesVino();
 
@@ -82,12 +84,13 @@ namespace PPAI_CU5
 
         private void btnSeleccionBodegas_Click(object sender, EventArgs e)
         {
+            btnSeleccionBodegas.Enabled = false ;
             foreach (DataGridViewRow fila in gridBodegas.SelectedRows)
             {
                 string nombreBodega = fila.Cells[1].Value.ToString();
                 tomarSeleccionBodega(nombreBodega);
             }
-            
+            ventanaActualizaciones.ShowDialog();
             
         }
 
