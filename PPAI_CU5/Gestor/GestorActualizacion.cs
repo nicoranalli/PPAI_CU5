@@ -44,7 +44,7 @@ namespace PPAI_CU5.Gestor
 
         #region Metodos
 
-        #endregion
+
 
         public List<Bodega> buscarBodegasActualizables()
         {
@@ -71,10 +71,11 @@ namespace PPAI_CU5.Gestor
             {
                 if (BodegaSeleccionada == bodega.getNombre()) 
                 { 
-                    bodegaSeleccionada = bodega; 
+                    bodegaSeleccionada = bodega;
                 };
             }
             obtenerActualizaciones(); // Va a la API y guarda en un atributo los vinos a actualizar
+            this.actualizarVinosBodega();
             this.pantallaNovedades.mostrarActualizaciones(vinosAActualizarOCrear);
             ; 
         }
@@ -87,15 +88,12 @@ namespace PPAI_CU5.Gestor
         {
             foreach (Vino vinoAActualizarOCrear in vinosAActualizarOCrear)
             {
-                // Recorre los vinos de todas la bodegas y me devuelve el primer vino que pertenece a esa bodega
-                Vino vinoExistente = vinosDeTodasLasBodegas.FirstOrDefault((vino) => (vino.getAniada() == vinoAActualizarOCrear.getAniada()) && (vino.getNombre() == vinoAActualizarOCrear.getNombre()));
-                if (vinoExistente != null) //Si existe el vino hay que modificarlo
+                bool existeVino = bodegaSeleccionada.existeVino(vinoAActualizarOCrear, vinosDeTodasLasBodegas);
+                if (existeVino)
                 {
-                    vinoExistente.setPrecio(vinoAActualizarOCrear.getPrecio());
-                    vinoExistente.setNotaDeCata(vinoAActualizarOCrear.getNotaDeCata());
-                    vinoExistente.setImagenEtiqueta(vinoAActualizarOCrear.getImagenEtiqueta());
+                    bodegaSeleccionada.actualizarVinosBodega(vinoAActualizarOCrear, vinosDeTodasLasBodegas);
                 }
-                else //Si no existe el vino hay que crearlo.
+                else
                 {
                     Vino vinoNuevo = new Vino
                     (
@@ -123,7 +121,8 @@ namespace PPAI_CU5.Gestor
             }
             return vinosEnString;
         }
-        
+        #endregion
+
     }
 
 

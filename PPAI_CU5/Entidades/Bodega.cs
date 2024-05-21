@@ -43,7 +43,17 @@ namespace PPAI_CU5.Entidades
         {
             return $"Nombre Bodega: {nombre}\n";
         }
-
+        public void actualizarVinosBodega( Vino vinoAActualizarOCrear, List <Vino> vinosDeTodasLasBodegas)
+        {
+                // Recorre los vinos de todas la bodegas y me devuelve el  vino que va a actualizar o crear.
+                Vino vinoExistente = vinosDeTodasLasBodegas.FirstOrDefault((vino) => (vino.getAniada() == vinoAActualizarOCrear.getAniada()) && (vino.getNombre() == vinoAActualizarOCrear.getNombre()));
+                if (vinoExistente != null) //Si existe el vino hay que modificarlo
+                {
+                    vinoExistente.setPrecio(vinoAActualizarOCrear.getPrecio());
+                    vinoExistente.setNotaDeCata(vinoAActualizarOCrear.getNotaDeCata());
+                    vinoExistente.setImagenEtiqueta(vinoAActualizarOCrear.getImagenEtiqueta());
+                }
+        }
 
     }
 }

@@ -85,7 +85,7 @@ namespace PPAI_CU5
             string bodegaSeleccionada = "";
             foreach (DataGridViewRow fila in gridBodegas.SelectedRows)
             {
-                string nombreBodega = fila.Cells[1].ToString();
+                string nombreBodega = fila.Cells[1].Value.ToString();
                 bodegaSeleccionada = nombreBodega;
 
             }
@@ -101,6 +101,8 @@ namespace PPAI_CU5
         {
             cajaTexto.Show();
             labelNovedades.Show();
+            cajaTexto.Text = "";
+
             foreach (Vino vino in vinos)
             {
                 cajaTexto.AppendText(vino.ToString() + "*********************************") ;
