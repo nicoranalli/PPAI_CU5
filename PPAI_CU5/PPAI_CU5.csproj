@@ -190,6 +190,9 @@
     <EmbeddedResource Include="Ventanas\PantallaNovedades.resx">
       <DependentUpon>PantallaNovedades.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\ResultadoListadoActualizaciones.resx">
+      <DependentUpon>ResultadoListadoActualizaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ActualizacionesVinos.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

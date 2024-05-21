@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPAI_CU5.Ventanas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,13 @@ namespace PPAI_CU5.Entidades
         private int periodoActualizacion;
         private DateTime fechaUltimaActualizacion;
         private string nombre;
+        public ResultadoListadoActualizaciones result;
         public Bodega(string nombre, int periodoActualizacion, DateTime fechaUltimaActualizacion)
         {
             this.nombre = nombre;
             this.periodoActualizacion = periodoActualizacion; //en meses
             this.fechaUltimaActualizacion = fechaUltimaActualizacion;
+            this.result = new ResultadoListadoActualizaciones();
         }
         public bool sosActualizable()
         {
@@ -41,10 +44,11 @@ namespace PPAI_CU5.Entidades
             List<Vino> vinos
             )
         {
+            Dictionary<string, string> resultadoVino = new Dictionary<string, string>();
             foreach (var item in listVinoActualizar)
             {
                 bool banderaCrear = false;
-
+                
                 //entra al ciclo si tiene el mismo nombre
                 if (this.esDeBodega(item.Value["bodega"].ToString()))
                 {
@@ -52,6 +56,7 @@ namespace PPAI_CU5.Entidades
                     {
                         if (vino.getNombre() == item.Key && vino.getAñada().ToString() == item.Value["año"].ToString())
                         {
+                            resultadoVino[item.Key] = "Actualizado";
                             banderaCrear = true;
                             Console.WriteLine($"se actuliza el vino {vino.getNombre()}");
                             if (item.Value.ContainsKey("precio"))
@@ -75,6 +80,7 @@ namespace PPAI_CU5.Entidades
                     //no se encontro vino
                     if (!banderaCrear)
                     {
+                        resultadoVino[item.Key] = "Creado";
                         //crear marinaje
                         var maridaje = item.Value["marinaje"] as Dictionary<string, string>;
                         var comidaMari = maridaje["nombreComida"];
@@ -107,7 +113,10 @@ namespace PPAI_CU5.Entidades
                         Console.WriteLine($"se creo el vino {nuevoVino.getNombre()} del año {nuevoVino.getAñada()}, y se registro con exito en la bodega {nuevoVino.conocerBodega()}");
                     }
                 }
+
+                
             }
+            this.result.obtenerResultado(resultadoVino);
         }
         public bool esDeBodega(string NombreBodega)
         {
