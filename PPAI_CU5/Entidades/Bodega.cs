@@ -44,5 +44,6 @@ namespace PPAI_CU5.Entidades
             return $"Nombre Bodega: {nombre}\n";
         }
 
+
     }
 }

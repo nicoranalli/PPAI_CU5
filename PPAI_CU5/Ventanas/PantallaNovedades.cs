@@ -21,7 +21,6 @@ namespace PPAI_CU5
         GestorActualizacion gestorActualizacion;
         Datos baseDeDatos;
         ApiDatosVino configAPI;
-        
         public PantallaNovedades()
         {
             InitializeComponent();
@@ -34,6 +33,9 @@ namespace PPAI_CU5
         {
             baseDeDatos.inicializarDatos();
             configurarGridBodegas();
+            cajaTexto.Hide();
+            labelNovedades.Hide();
+            labelSeleccioneBodega.Hide();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -42,6 +44,7 @@ namespace PPAI_CU5
             btnActualizar.Hide();
             gridBodegas.Show();
             btnSeleccionBodegas.Show();
+            labelSeleccioneBodega.Show();
             btnSeleccionBodegas.Enabled = false;
         }
 
@@ -85,7 +88,6 @@ namespace PPAI_CU5
                 string nombreBodega = fila.Cells[1].ToString();
                 bodegaSeleccionada = nombreBodega;
 
-
             }
             tomarSeleccionBodega(bodegaSeleccionada);
             
@@ -94,6 +96,15 @@ namespace PPAI_CU5
         private void tomarSeleccionBodega(string bodegaSeleccionada)
         {
             gestorActualizacion.tomarSeleccionBodega(bodegaSeleccionada);
+        }
+        public void mostrarActualizaciones(List <Vino> vinos)
+        {
+            cajaTexto.Show();
+            labelNovedades.Show();
+            foreach (Vino vino in vinos)
+            {
+                cajaTexto.AppendText(vino.ToString() + "*********************************") ;
+            }
         }
     }
 }

@@ -75,11 +75,7 @@ namespace PPAI_CU5.Gestor
                 };
             }
             obtenerActualizaciones(); // Va a la API y guarda en un atributo los vinos a actualizar
-            Console.WriteLine("Vinos actuales...");
-            Console.WriteLine(mostrarVinos(vinosDeTodasLasBodegas));
-            Console.WriteLine("Vinos actualizados...");
-            actualizarVinosBodega();
-            Console.WriteLine(mostrarVinos(vinosDeTodasLasBodegas));
+            this.pantallaNovedades.mostrarActualizaciones(vinosAActualizarOCrear);
             ; 
         }
         public void obtenerActualizaciones()
